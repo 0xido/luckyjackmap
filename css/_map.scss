@@ -1,0 +1,160 @@
+// _map.scss
+
+
+
+    input[type="checkbox"][id^="checkbox"] {
+        display: none;
+    }
+    
+    /* Main */
+    #map {
+		background-image: url(../img/resources/paper-bg-map.jpg);
+        height: 100vh;
+    }
+    
+
+ 
+    
+    
+    /* Leaflet override */
+    .leaflet-popup-pane {
+        z-index: 2001;
+    }
+    .leaflet-popup-content {
+        min-width: 400px;
+    }
+    .tooltip-image-wrapper {
+        display: flex;
+        align-items: flex-end;
+        flex-direction: row-reverse;
+        width: 100%;
+        height: 280px;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    
+ 
+    
+    .leaflet-popup-content-wrapper,
+    .leaflet-popup-tip {
+            background: $color-dark;
+            color: $color-white;
+            box-shadow: $color-box-shadow;
+    }
+    .leaflet-container {
+        .leaflet-marker-pane img {
+        transition: all .8s ease;
+        &:hover {
+            width: 40px!important;
+            height: 40px!important;
+            transition: all .8s ease;
+        }}
+    }
+
+	/* ESTILIZADO */
+    
+    .tooltip-resize {
+		display: none;
+    }
+    
+    .tooltip-content {
+        margin: 1rem;
+		padding: 1rem;
+		border: 1px groove $color-gold;
+		border-radius: 4px;
+        font-size: .9rem;
+        line-height: 1.2rem;
+        text-align: center;
+        a {
+            font-family: "PlayfairDisplay-Regular_italic", Arial, sans-serif;
+        }
+        .tooltip-header {
+            text-align: center;
+            margin-bottom: 1rem;
+            h2 {
+                margin-bottom: 1rem;
+                font-size: 1.6rem;
+                line-height: 2rem;
+                color: $color-gold;
+            }
+            .tooltip-tag {
+                display: inline;
+                background-color: $color-gold;
+                padding: .2rem .8rem;
+                font-size: .7rem;
+                border-radius: 2px;
+                margin: 0 .4rem;
+                color: $color-dark;
+            }
+            .tooltip-tag--unconfirmed {
+                background-color: $color-red;
+            }
+        }
+        /*.tooltip-description {
+            font-size: 1rem;
+        }*/
+        .tooltip-quote {
+
+            font-family: "PlayfairDisplay-Regular_italic", Arial, sans-serif;
+        }
+        .tooltip-seenin {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid $color-gold;
+        }
+        .tooltip-moreinfo {
+            margin: 1rem 0;
+            a {
+                color: $color-gold;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+        .tooltip-dataprovided {
+            padding-top: 1rem;
+            border-top: 1px dashed $color-brown;
+            font-size: .7rem;
+            opacity: .8;
+            a {
+                color: $color-gold;
+            }
+        }
+    }
+    
+    
+    
+    
+    
+
+	/* AMPLIACIÓN IMAGEN EN POPUP */
+    
+    
+    
+    
+   
+
+
+
+/* Unica forma de quitar controlador para crear líneas en el mapa 
+.leaflet-draw {display: none;}*/
+/*.leaflet-control-coordinates.hidden {
+	display: none;
+}*/
+
+/* coodinates.css */
+.leaflet-control-coordinates {
+	background: white;
+	border-radius: 4px;
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.65);
+	cursor: pointer;
+	padding: 2px 5px;
+}
+.leaflet-control-coordinates-lng {
+	padding-left: 5px;
+}
+.leaflet-div-icon {
+    background: transparent;
+    border: 2px solid red;
+    border-radius: 50%;
+}

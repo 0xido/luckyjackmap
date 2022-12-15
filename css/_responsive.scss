@@ -1,0 +1,125 @@
+//_responsive.scss
+
+
+/* OVERLAY MENU */
+@media screen and (max-height: 450px) {
+    .overlay a {
+      font-size: 20px;
+    }
+}
+/* RESPONSIVE POR HACER 
+@media (min-width: 768px) {
+	.corner-ribbon {
+		width: 3.5em;
+	  	margin: -4px;
+	}
+    .straight-ribbon {
+        width: 27em;
+        &.top {
+            width: 50%;
+            top: -18%;
+        }
+        &.bottom {
+            width: 25%;
+            bottom: -14%;
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    .border-outer {
+		height: 94%;
+	}
+	.corner-ribbon {
+		width: 4em;
+	  	margin: -5px;
+	}
+    .straight-ribbon {
+        width: 27em;
+        &.top {
+            width: 50%;
+            top: -18%;
+        }
+        &.bottom {
+            width: 25%;
+            bottom: -14%;
+        }
+    }
+}
+
+    @media screen and (min-width: 800px) {
+        .tooltip-image-wrapper {
+            width: 400px;
+        }
+    }
+*/
+@media screen and (min-width: 800px) {
+    .sidebar__paths {
+        display: block;
+        height: 100%;
+        padding-bottom: 1rem;
+        /*overflow-x: hidden;
+        overflow-y: auto;*/
+        gap: unset;
+        text-align: center;
+        &::-webkit-scrollbar {
+          display: none;
+        }
+    }
+}
+/* TAMAÑO MAC 13" */
+@media (min-width: 1200px) and (max-width: 1440px) {
+	
+    /* INTRO */
+    .bg-map {
+        .bg-overlay {
+            .border-outer {
+                .border-mid {
+                    .border-inner {
+                        h1 {
+                            font-size: 3.2rem;
+                        }
+                        .corner-ribbon {
+                            width: 8%;
+                            margin: 0;
+                        }
+                        .straight-ribbon {
+                            &.top {
+                                width: 32%;
+                                top: -21%;
+                            }
+                            &.bottom {
+                                width: 25%;
+                                bottom: -16%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }   
+    
+    /* SIDEBAR */
+    .sidebar__header {
+        padding-top: 2rem;
+        .sidebar__header-title {
+            font-size: 2.4rem;
+        }
+        .sidebar__header-description {
+            font-size: 1rem;
+        }
+        aside {
+            font-size: .8rem;
+        }
+    }
+    .sidebar__paths {
+        .pathsgrid {
+            grid-template-columns: repeat(2, 1fr);
+
+        }
+    }
+    /* OVERLAY */
+    .overlay-content {
+        top: 8%!important;
+    }
+}

@@ -1,0 +1,53 @@
+// _books_pages.scss
+
+.books-page {
+    .bg-map {
+        .bg-overlay {
+            padding: 8% 0;
+            overflow-y: auto;
+            .site-header {
+                position: fixed;
+                top: 0;
+                left: 0;
+                height: 140px;
+                .logo {
+                    opacity: 1;
+                    h1 {
+                        line-height: 1;
+                    }
+                }
+                &:hover {
+                    background-color: transparent;
+                    box-shadow: none;
+                }
+            }
+            .menu-overlay {
+                position: fixed;
+            }
+            .books-content {
+                h2 {
+                    font-size: 3.8rem;
+                }
+                .card {
+                    background-color: $color-sephia-light;
+                    border: 1px solid $color-brown;
+                    .card-body {
+                        h3 {
+                            margin: 16px 0;
+                            font-family: "PlayfairDisplay-Bold_italic", Arial, sans-serif;
+                            font-size: 1.6rem;
+                            color: $color-brown;
+                        }
+                        .see-more {
+                            display: inline;
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+            .site-footer {
+                display: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="An interactive map of Lucky Jack Aubrey & Stephen Maturin throughout Patrick O´Brian´s books" />
+    <meta property="og:title" content="An interactive map of Lucky Jack Aubrey & Stephen Maturin throughout Patrick O´Brian´s books" />
+    <meta property="og:site_name" content="Lucky Jack Aubrey & Stephen Maturin Adventures Interactive map" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://luckyjackmap.com" />
+    <meta property="og:image" content="../img/thumb-rrss.jpg" />
+    <meta property="og:description" content="An interactive map of Lucky Jack Aubrey & Stephen Maturin throughout Patrick O´Brian´s books " />
+    <meta name="twitter:creator" content="@amlomba">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="rgba(68,60,42,100)">
+    <title>"Lucky" Jack Aubrey & Stephen Maturin Adventures - Interactive map</title>
+    <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/plugins/leaflet.css"/>
+    <link rel="stylesheet" href="../css/plugins/leaflet.draw.css"/>
+    <link rel="stylesheet" href="../css/style.css"/>
+    <script defer type="text/javascript" src="../data/paths.js"></script>
+    <script defer type="text/javascript" src="../data/markers.js"></script>
+    <script defer src="https://unpkg.com/leaflet@1.9.1/dist/leaflet.js" integrity="sha256-NDI0K41gVbWqfkkaHj15IzU7PtMoelkzyKp8TOaFQ3s=" crossorigin=""></script>
+    <script defer src="../js/plugins/leaflet.draw.js"></script>
+    <script defer src="../js/plugins/coordinates.js"></script>
+    <script defer src="../js/plugins/snakeanim.js"></script>
+    <script defer src="../js/map.js"></script>
+    <script defer src="../js/main.js"></script>
+    
+</head>
+<body>
+    <header class="site-header">
+        <div class="logo"><h1><a href="../map/index.html">Lucky Jack Map</a></h1></div>
+    </header>
+    <main role="main" aria-label="Main menu">
+        <!-- MENU OVERLAY -->
+        <div class="wrapper">
+            <div class="overlay">
+                <div class="overlay-background">
+                    <div class="overlay-content">
+                        <a href="./index.html">The "Lucky" Jack Map</a>
+                        <a href="../books/index.html">Books & Film</a>
+                        <!--<a href="#">Characters</a>
+                        <a href="#">Ships</a>-->
+                        <a href="#">Bibliography & Resources</a>
+                        <a href="#">About</a>
+                    </div>
+                </div>
+            </div>
+            <div class="border menu-overlay">
+                <div class="border-inner">
+                    <button class="hamburger hamburger--collapse" type="button">
+                        <div class="btn-menu">
+                            <span class="icon-menu"></span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- SIDEBAR NAVIGATION PATHS -->
+        <section>
+            <div class="main sidebar--hidden" id="main">
+                <div class="sidebar">
+                    <button type="button" class="btn-open-filters">
+                        <span class="i-filters"></span>
+                        Filters
+                    </button>
+                    <div class="filter-content">
+                        <h4>Categories of markers</h4>
+                        <div class="filters">
+                            <div class="checkbox-filter">
+                                <input type="checkbox" name="" value="" id="" checked />
+                                <label class="" for="">Starting points</label>
+                            </div>
+                            <div class="checkbox-filter">
+                                <input type="checkbox" name="" value="" id="" checked/>
+                                <label class="" for="">Cities</label>
+                            </div>
+                            <div class="checkbox-filter">
+                                <input type="checkbox" name="" value="" id="" checked />
+                                <label class="" for="">Ports</label>
+                            </div>
+                            <div class="checkbox-filter">
+                                <input type="checkbox" name="" value="" id="" checked />
+                                <label class="" for="">Blockades</label>
+                            </div>
+                            <div class="checkbox-filter">
+                                <input type="checkbox" name="" value="" id="" checked />
+                                <label class="" for="">Battles</label>
+                            </div>
+                            <div class="checkbox-filter">
+                                <input type="checkbox" name="" value="" id="" checked />
+                                <label class="" for="">Sinkings</label>
+                            </div>
+                            <div class="checkbox-filter">
+                                <input type="checkbox" name="" value="" id="" checked />
+                                <label class="" for="">Ships</label>
+                            </div>
+                            <div class="checkbox-filter">
+                                <input type="checkbox" name="" value="" id="" checked />
+                                <label class="" for="">Spanish forts</label>
+                            </div>
+                            <div class="checkbox-filter">
+                                <input type="checkbox" name="" value="" id="" checked />
+                                <label class="" for="">All the voyages</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sidebar-content-books">
+                        <div class="sidebar__header">
+                            <h2 class="sidebar__header-title">The voyages through books</h2>
+                            <p class="sidebar__header-description">On this interactive map you will be able to see all the trips, events and access to all the information about each book.</p>
+                            <aside>Click on the cover of each book and you can see the specific route for it, click on all and you can also see all the routes together*.</aside>
+                        </div>
+                        <div class="sidebar__paths">
+                            <h2>Books</h2>
+                            <div class="pathsgrid">
+                                <div class="pathsgrid__card">
+                                    <input type="checkbox" name="Master & Commander" id="checkboxMaster&Commander" onchange="setPath(this)"/>
+                                    <label class="pathsgrid__label" for="checkboxMaster&Commander" tabindex="0" onkeydown="interactionLabel(event)" >
+                                        <img src="https://www.artreserve.co.uk/catalogueimg/master%20and%20commander%20web%20large(1).jpg" alt="Master & Commander" />
+                                        <div class="travel-data">
+                                            <date>1800 - 1801</date>
+                                            <span class="miles">7192 Nautical Miles</span>
+                                        </div>
+                                        <h3>Master & Commander</h3>
+                                        <date>(1969)</date>
+                                        <a href="../books/Master&Commander/index.html" class="see-more">See more</a>
+                                    </label>
+                                </div>
+                                <div class="pathsgrid__card">
+                                    <input type="checkbox" name="Post Captain" id="checkboxPostCaptain" onchange="setPath(this)" />
+                                    <label class="pathsgrid__label" for="checkboxPostCaptain" tabindex="0" onkeydown="interactionLabel(event)">
+                                        <img src="https://www.artreserve.co.uk/catalogueimg/post-captain-l.jpg" alt="Post Captain" />
+                                        <div class="travel-data">
+                                            <date>1803 - 1804</date>
+                                            <span class="miles">8808 Nautical Miles</span>
+                                        </div>
+                                        <h3>Post Captain</h3>
+                                        <date>(1972)</date>
+                                        <a href="" class="see-more">See more</a>
+                                    </label>
+                                </div>
+                                <div class="pathsgrid__card">
+                                    <input type="checkbox" name="HMS Surprise" id="checkboxHMSSurprise" onchange="setPath(this)" />
+                                    <label class="pathsgrid__label" for="checkboxHMSSurprise" tabindex="0" onkeydown="interactionLabel(event)">
+                                        <img src="https://www.artreserve.co.uk/catalogueimg/geoff-hunt-h.m.s.-surprise-off-calcutta-1.jpg" alt="HMS Surprise" />
+                                        <div class="travel-data">
+                                            <date>1805 - 1806</date>
+                                            <span class="miles">31663 Nautical Miles</span>
+                                        </div>
+                                        <h3>HMS Surprise</h3>
+                                        <date>(1973)</date>
+                                        <a href="" class="see-more">See more</a>
+                                    </label>
+                                </div>
+                                <div class="pathsgrid__card">
+                                    <input type="checkbox" name="The Mauritius Command" id="checkboxTheMauritiusCommand"  onchange="setPath(this)"/>
+                                    <label class="pathsgrid__label" for="checkboxTheMauritiusCommand" tabindex="0" onkeydown="interactionLabel(event)">
+                                        <img src="https://www.artreserve.co.uk/catalogueimg/geoff-hunt-the-mauritius-command-1.jpg" alt="The Mauritius Command" />
+                                        <div class="travel-data">
+                                            <date>1809 - 1810</date>
+                                            <span class="miles">21700 Nautical Miles</span>
+                                        </div>
+                                        <h3>The Mauritius Command</h3>
+                                        <date>(1977)</date>
+                                        <a href="" class="see-more">See more</a>
+                                    </label>
+                                </div>
+                                <div class="pathsgrid__card">
+                                    <input type="checkbox" name="Desolation Island" id="checkboxDesolationIsland"  onchange="setPath(this)"/>
+                                    <label class="pathsgrid__label" for="checkboxDesolationIsland" tabindex="0" onkeydown="interactionLabel(event)">
+                                        <img src="https://www.artreserve.co.uk/catalogueimg/desol.jpg" alt="Desolation Island" />
+                                        <div class="travel-data">
+                                            <date>1811 - 1812</date>
+                                            <span class="miles">12294 Nautical Miles</span>
+                                        </div>
+                                        <h3>Desolation Island</h3>
+                                        <date>(1978)</date>
+                                        <a href="" class="see-more">See more</a>
+                                    </label>
+                                </div>
+                                <div class="pathsgrid__card">
+                                    <input type="checkbox" name="The Fortune of War" id="checkboxTheFortuneOfWar" onchange="setPath(this)" />
+                                    <label class="pathsgrid__label" for="checkboxTheFortuneOfWar" tabindex="0" onkeydown="interactionLabel(event)">
+                                        <img src="https://www.artreserve.co.uk/catalogueimg/fortune-of-war-l.jpg" alt="The Fortune of War" />
+                                        <div class="travel-data">
+                                            <date>1812 - 1813</date>
+                                            <span class="miles">23730 Nautical Miles</span>
+                                        </div>
+                                        <h3>The Fortune of War</h3>
+                                        <date>(1979)</date>
+                                        <a href="" class="see-more">See more</a>
+                                    </label>
+                                </div>
+                                <div class="pathsgrid__card">
+                                    <input type="checkbox" name="The Surgeon´s Mate" id="checkboxTheSurgeon´sMate" onchange="setPath(this)" />
+                                    <label class="pathsgrid__label" for="checkboxTheSurgeon´sMate" tabindex="0" onkeydown="interactionLabel(event)">
+                                        <img src="https://www.artreserve.co.uk/catalogueimg/surgeon%E2%80%99s-mate-1.jpg" alt="The Surgeon's Mate" />
+                                        <div class="travel-data">
+                                            <date>Undefined</date>
+                                            <span class="miles">6635 Nautical Miles</span>
+                                        </div>
+                                        <h3>The Surgeon's Mate</h3>
+                                        <date>(1980)</date>
+                                        <a href="" class="see-more">See more</a>
+                                    </label>
+                                </div>
+                                <div class="pathsgrid__card">
+                                    <input type="checkbox" name="The Ionian Mission" id="checkboxTheIonianMission" onchange="setPath(this)" />
+                                    <label class="pathsgrid__label" for="checkboxTheIonianMission" tabindex="0" onkeydown="interactionLabel(event)">
+                                        <img src="https://www.artreserve.co.uk/catalogueimg/ionianl.jpg" alt="The Ionian Mission" />
+                                        <div class="travel-data">
+                                            <date>Undefined</date>
+                                            <span class="miles">8204 Nautical Miles</span>
+                                        </div>
+                                        <h3>The Ionian Mission</h3>
+                                        <date>(1981)</date>
+                                        <a href="" class="see-more">See more</a>
+                                    </label>
+                                </div>
+                                <div class="pathsgrid__card">
+                                    <input type="checkbox" name="Treasons Harbour" id="checkboxTreasonsHarbour" onchange="setPath(this)" />
+                                    <label class="pathsgrid__label" for="checkboxTreasonsHarbour" tabindex="0" onkeydown="interactionLabel(event)">
+                                        <img src="https://www.artreserve.co.uk/catalogueimg/treasons%20harbour%20canvas%20l.jpg" alt="Treason's Harbour" />
+                                        <div class="travel-data">
+                                            <date>Undefined</date>
+                                            <span class="miles">6394 Nautical Miles</span>
+                                        </div>
+                                        <h3>Treason's Harbour</h3>
+                                        <date>(1983)</date>
+                                        <a href="" class="see-more">See more</a>
+                                    </label>
+                                </div>
+                                <div class="pathsgrid__card">
+                                    <input type="checkbox" name="The Far Side of the World" id="checkboxTheFarSideOfTheWorld" onchange="setPath(this)" />
+                                    <label class="pathsgrid__label" for="checkboxTheFarSideOfTheWorld" tabindex="0" onkeydown="interactionLabel(event)">
+                                        <img src="../img/books/The_Far_Side_of_the_World.jpeg" alt="The Far Side of the World" />
+                                        <div class="travel-data">
+                                            <date>Undefined</date>
+                                            <span class="miles">17059 Nautical Miles</span>
+                                        </div>
+                                        <h3>The Far Side of the World</h3>
+                                        <date>(1984)</date>
+                                        <a href="" class="see-more">See more</a>
+                                    </label>
+                                </div>
+                                <div class="pathsgrid__card">
+                                    <input type="checkbox" name="The Reverse of the Medal" id="checkboxTheReverseOfTheMedal" onchange="setPath(this)" />
+                                    <label class="pathsgrid__label" for="checkboxTheReverseOfTheMedal" tabindex="0" onkeydown="interactionLabel(event)">
+                                        <img src="https://www.artreserve.co.uk/catalogueimg/the%20reverse%20of%20the%20medal%20l.jpg" alt="The Reverse of the Medal" />
+                                        <div class="travel-data">
+                                            <date>Undefined</date>
+                                            <span class="miles">15070 Nautical Miles</span>
+                                        </div>
+                                        <h3>The Reverse of the Medal</h3>
+                                        <date>(1986)</date>
+                                        <a href="" class="see-more">See more</a>
+                                    </label>
+                                </div>
+                                <div class="pathsgrid__card">
+                                    <input type="checkbox" name="The Letter of Marque" id="checkboxTheLetterOfMarque" onchange="setPath(this)" />
+                                    <label class="pathsgrid__label" for="checkboxTheLetterOfMarque" tabindex="0" onkeydown="interactionLabel(event)">
+                                        <img src="https://www.artreserve.co.uk/catalogueimg/letter%20of%20marque%20large.jpg" alt="The Letter of Marque" />
+                                        <div class="travel-data">
+                                            <date>Undefined</date>
+                                            <span class="miles">4578 Nautical Miles</span>
+                                        </div>
+                                        <h3>The Letter of Marque</h3>
+                                        <date>(1988)</date>
+                                        <a href="" class="see-more">See more</a>
+                                    </label>
+                                </div>
+                                <div class="pathsgrid__card still-disabled">
+                                    <!--<input type="checkbox" name="The Thirteen-gun Salute" id="checkboxTheThirteen-gunSalute" onchange="setPath(this)" />-->
+                                    <label class="pathsgrid__label" for="checkboxTheThirteen-gunSalute" tabindex="0" onkeydown="interactionLabel(event)">
+                                        <img src="https://www.artreserve.co.uk/catalogueimg/thirteensg.jpg" alt="The Thirteen-Gun Salute" />
+                                        <div class="travel-data">
+                                            <date>Undefined</date>
+                                            <span class="miles">17099 Nautical Miles</span>
+                                        </div>
+                                        <h3>The Thirteen-Gun Salute</h3>
+                                        <date>(1989)</date>
+                                        <a href="" class="see-more">See more</a>
+                                    </label>
+                                </div>
+                                <div class="pathsgrid__card">
+                                    <!--<input type="checkbox" name="The Nutmeg of Consolation" id="checkboxTheNutmegOfConsolation" onchange="setPath(this)" />-->
+                                    <label class="pathsgrid__label" for="checkboxTheNutmegOfConsolation" tabindex="0" onkeydown="interactionLabel(event)">
+                                        <img src="../img/books/The_Nutmeg_of_Consolation.jpeg" alt="The Nutmeg of Consolation" />
+                                        <div class="travel-data">
+                                            <date>Undefined</date>
+                                            <span class="miles">6841 Nautical Miles</span>
+                                        </div>
+                                        <h3>The Nutmeg of Consolation</h3>
+                                        <date>(1991)</date>
+                                        <a href="" class="see-more">See more</a>
+                                    </label>
+                                </div>
+                                <div class="pathsgrid__card">
+                                    <!--<input type="checkbox" name="Clarissa Oakes" id="checkboxClarissaOakes" onchange="setPath(this)" />-->
+                                    <label class="pathsgrid__label" for="checkboxClarissaOakes" tabindex="0" onkeydown="interactionLabel(event)">
+                                        <img src="../img/books/Clasrissa_Oakes.jpeg" alt="Clarissa Oakes" />
+                                        <div class="travel-data">
+                                            <date>Undefined</date>
+                                            <span class="miles">5663 Nautical Miles</span>
+                                        </div>
+                                        <h3>Clarissa Oakes</h3>
+                                        <date>(1992)</date>
+                                        <a href="" class="see-more">See more</a>
+                                    </label>
+                                </div>
+                                <div class="pathsgrid__card still-disabled">
+                                    <!--<input type="checkbox" name="The Wine-dark Sea" id="checkboxTheWine-darkSea" onchange="setPath(this)" />-->
+                                    <label class="pathsgrid__label" for="checkboxTheWine-darkSea" tabindex="0" onkeydown="interactionLabel(event)">
+                                        <img src="https://www.artreserve.co.uk/catalogueimg/tkoquwuaabggli550yzbde4522092004173431.jpg" alt="The Wine-Dark Sea" />
+                                        <div class="travel-data">
+                                            <date>Undefined</date>
+                                            <span class="miles">10343 Nautical Miles</span>
+                                        </div>
+                                        <h3>The Wine-Dark Sea</h3>
+                                        <date>(1993)</date>
+                                        <a href="" class="see-more">See more</a>
+                                    </label>
+                                </div>
+                                <div class="pathsgrid__card still-disabled">
+                                    <!--<input type="checkbox" name="The Commodore" id="checkboxTheCommodore" onchange="setPath(this)" />-->
+                                    <label class="pathsgrid__label" for="checkboxTheCommodore" tabindex="0" onkeydown="interactionLabel(event)">
+                                        <img src="https://www.artreserve.co.uk/catalogueimg/commodore%20l(1).jpg" alt="The Commodore" />
+                                        <div class="travel-data">
+                                            <date>Undefined</date>
+                                            <span class="miles">19245 Nautical Miles</span>
+                                        </div>
+                                        <h3>The Commodore</h3>
+                                        <date>(1995)</date>
+                                        <a href="" class="see-more">See more</a>
+                                    </label>
+                                </div>
+                                <div class="pathsgrid__card still-disabled">
+                                    <!--<input type="checkbox" name="The Yellow Admiral" id="checkboxTheYellowAdmiral" onchange="setPath(this)" />-->
+                                    <label class="pathsgrid__label" for="checkboxTheYellowAdmiral" tabindex="0" onkeydown="interactionLabel(event)">
+                                        <img src="https://www.artreserve.co.uk/catalogueimg/the%20yellow%20admiral%20web%20large.jpg" alt="The Yellow Admiral" />
+                                        <div class="travel-data">
+                                            <date>Undefined</date>
+                                            <span class="miles">4064 Nautical Miles</span>
+                                        </div>
+                                        <h3>The Yellow Admiral</h3>
+                                        <date>(1996)</date>
+                                        <a href="" class="see-more">See more</a>
+                                    </label>
+                                </div>
+                                <div class="pathsgrid__card still-disabled">
+                                    <!--<input type="checkbox" name="The Hundred Days" id="checkboxTheHundredDays" onchange="setPath(this)" />-->
+                                    <label class="pathsgrid__label" for="checkboxTheHundredDays" tabindex="0" onkeydown="interactionLabel(event)">
+                                        <img src="https://www.artreserve.co.uk/catalogueimg/the%20hundred%20days%20thumb(1).jpg" alt="The Hundred Days" />
+                                        <div class="travel-data">
+                                            <date>Undefined</date>
+                                            <span class="miles">5303 Nautical Miles</span>
+                                        </div>
+                                        <h3>The Hundred Days</h3>
+                                        <date>(1998)</date>
+                                        <a href="" class="see-more">See more</a>
+                                    </label>
+                                </div>
+                                <div class="pathsgrid__card still-disabled">
+                                    <!--<input type="checkbox" name="Blue at the Mizzen" id="checkboxBlueAtTheMizzen" onchange="setPath(this)" />-->
+                                    <label class="pathsgrid__label" for="checkboxBlueAtTheMizzen" tabindex="0" onkeydown="interactionLabel(event)">
+                                        <img src="https://www.artreserve.co.uk/catalogueimg/blue%20at%20the%20mizzen%20thumb.jpg" alt="Blue at the Mizzen" />
+                                        <div class="travel-data">
+                                            <date>Undefined</date>
+                                            <span class="miles">18162 Nautical Miles</span>
+                                        </div>
+                                        <h3>Blue at the Mizzen</h3>
+                                        <date>(1999)</date>
+                                        <a href="" class="see-more">See more</a>
+                                    </label>
+                                </div>
+                                <div class="pathsgrid__card">
+                                    <!--<input type="checkbox" name="The Final Unfinished Voyage" id="checkboxTheFinalUnfinishedVoyage" onchange="setPath(this)" />-->
+                                    <label class="pathsgrid__label" for="checkboxTheFinalUnfinishedVoyage" tabindex="0" onkeydown="interactionLabel(event)">
+                                        <img src="../img/books/21_book.jpeg" alt="The Final Unfinished Voyage of Jack Aubrey" />
+                                        <div class="travel-data">
+                                            <date>Undefined</date>
+                                            <span class="miles">1845 Nautical Miles</span>
+                                        </div>
+                                        <h3>The Final Unfinished Voyage of Jack Aubrey or 21</h3>
+                                        <date>(2004)</date>
+                                        <a href="" class="see-more">See more</a>
+                                    </label>
+                                </div>
+                            </div>
+                            <h2>Movie</h2>
+                            <div class="pathsgrid movie">
+                                <div class="pathsgrid__card">
+                                    <input type="checkbox" name="M&M Film" id="checkboxM&MFilm" onchange="setPath(this)"/>
+                                    <label class="pathsgrid__label" for="checkboxM&MFilm" tabindex="0" onkeydown="interactionLabel(event)" >
+                                        <img src="../img/books/Master_and_Commander-The_Far_Side_of_the_World_poster.png" alt="Master and Commander: The Far Side of the World" />
+                                        <h3>Master and Commander: The Far Side of the World</h3>
+                                        <date>(2003)</date>
+                                    </label>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="main__button">
+                    <div class="border">
+                        <div class="border-inner">
+                            <button id="main__button-input" class="main__button-input" type="button" aria-label="Hide or show sidebar" onclick="hideshow()"></button>
+                        </div>
+                    </div>
+                </div>    
+            </div>
+        </section>
+        <!-- MAP -->
+        <section>
+            <div id="map"></div>
+        </section>
+    </main>
+    <footer class="site-footer">
+        <p class="atribution-text">Data provided by <a href="https://www.cannonade.net/index.php" target="_blank">The Patrick O'Brian Mapping Project</a></p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.1.slim.min.js" integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA=" crossorigin="anonymous"></script>
+
+</body>
+</html>

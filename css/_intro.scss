@@ -1,0 +1,130 @@
+// _intro.scss
+
+
+.intro {
+        .border-outer {
+            border: 2px solid $color-brown;
+            height: 99%;
+            width: 98%;
+            padding: 6px;
+            margin: 0 auto;
+            .border-mid {
+                border: 6px solid $color-brown;
+                height: 100%;
+                width: 100%;
+                padding: 6px;
+                margin: auto;
+                .border-inner {
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: column;
+                    position: relative;
+                    border: 2px solid $color-brown;
+                    height: 100%;
+                    width: 100%;
+                    margin: auto;
+                    .corner-ribbon {
+                        position: absolute;
+                        width: 6%;
+                        margin: 0;
+                        &.corner-left-top {
+                            left: 0;
+                            top: 0;
+                        }
+                        &.corner-right-top {
+                            top: 0;
+                            right: 0;
+                             -webkit-transform: scaleX(-1);
+                          transform: scaleX(-1);
+                        }
+                        &.corner-right-bottom {
+                            right: 0;
+                            bottom: 0;
+                             -webkit-transform: scale(-1);
+                              transform: scale(-1);
+                        }
+                        &.corner-left-bottom {
+                            left: 0;
+                            bottom: 0;
+                            -webkit-transform: scaleY(-1);
+                              transform: scaleY(-1);
+                        }
+                    }
+                    .straight-ribbon {
+                        position: absolute;
+                        left: 0;
+                        right: 0;
+                        margin: auto;
+                        width: 11em;
+                        &.top {
+                            width: 30%;
+                            top: -16%;
+                        }
+                        &.bottom {
+                            width: 25%;
+                            bottom: -14%;
+                        }
+                    }
+                    h1 {
+                        font-size: 4rem;
+                        margin-bottom: 2rem;
+                    }
+                    h2 {
+                        margin-bottom: 2rem;
+                        font-family: "PlayfairDisplay-Regular";
+                        font-size: 1.6rem;
+                        color: $color-grey;
+                    }
+                    a {
+                        width: 200px;
+                        margin: 0 auto;
+                        font-size: 1.4rem;
+                        color: $color-brown;
+                    }
+                }
+            }  
+        }
+    }
+/* ANIMACIÓN BRÚJULA */
+.compass-animation {
+    display: block;
+    .core {fill: $color-brown;}
+    .needle {fill: $color-brown;}  
+    .circle {fill: $color-brown;}
+    &:hover {
+        @keyframes rotatingPointer {
+            0% {
+                transform: rotate(0deg);
+            }
+            25% {
+                transform: rotate(45deg);
+                animation-timing-function: cubic-bezier(0.3, 0.5, 0.58, 1);
+            }
+            50% {
+                transform: rotate(90deg);
+                animation-timing-function: cubic-bezier(0.3, 0.5, 0.58, 1);
+            }
+            75% {
+                transform: rotate(135deg);
+                animation-timing-function: cubic-bezier(0.3, 0.5, 0.58, 1);
+            }
+            100% {
+                transform: rotate(0deg);
+                animation-timing-function: cubic-bezier(0.3, 0.5, 0.58, 1);
+            }
+            
+        }
+        .pointer {
+            animation: rotatingPointer 2880ms infinite;
+            transform-origin: 50% 50%;
+            animation-timing-function: cubic-bezier(0.68, 0, 0.265, 2);
+        }
+    }
+}
+
+
+
+
+
+
+

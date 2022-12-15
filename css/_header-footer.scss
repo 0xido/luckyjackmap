@@ -1,0 +1,56 @@
+// _header-footer.scss
+
+.site-header, .site-footer {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 124px;
+    padding: 0 2rem;
+    background-image: url("../img/resources/bg-paper-big-hd.png");
+    z-index: 2000;
+    transition: all 1s;
+    .logo {
+        display: block;
+        margin: 0 auto;
+        width: 280px;
+        height: 122px;
+        text-align: center;
+        background: url(../img/resources/ribbons/Logo-ribbon.svg) center no-repeat;
+        background-size: 268px;
+        transition: all 1s;
+        h1 {
+            padding: 2.6rem 0;
+            a {
+                font-family: "PlayfairDisplay-Black_italic", Arial, sans-serif;
+                color: $color-dark;
+                font-weight: bold;
+                font-size: 1.6rem;
+                transition: all 1s;
+            }
+        }
+    }
+    &:hover {
+        background-color: $color-sephia;
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+        opacity: 1;
+    }
+}
+
+.site-footer {
+    bottom: 0;
+    background-image: url("../img/resources/bg-paper-big-ft.png");
+    z-index: 999;
+    &:hover {
+        background-color: transparent;
+    }
+}
+.atribution-text {
+    display: block;
+    padding-top: 5rem;
+    color: $color-brown; 
+    font-size: 1rem;
+    a {
+        color: blue;
+        text-decoration: underline;
+    }
+}
