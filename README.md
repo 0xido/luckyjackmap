@@ -6,7 +6,7 @@ The most interesting section is the map of 1800, where you can find the path of 
 
 # Development 
 
-The website is created with HTML/CSS/JS and I´m considering to moving it to another platform that reduces the creation of each summary page.
+The website is built with HTML/CSS/JS and I´m considering to moving it to another platform that reduces the creation time of each summary page.
 
 I´ve used the base of the project [ROP-MAP](https://rop-map.com/) created by @Algernhon to make the map section, and I´ve been using DALL-E to create most of the popups images.
 
