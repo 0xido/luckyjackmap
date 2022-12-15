@@ -2,7 +2,7 @@
 
 Lucky Jack Map is a website about the main characters "Lucky" Jack Aubrey & Stephen Maturin, who appear in Patrick O´Brian´s books and the film "Master and Commander: The far side of the world".
 
-The most interesting section is the map, where you can find the path of each book, the markers with the most important events/places/battles, filter them (not yet) and access the summary of each one with their own synopsis, main characters, and ships.
+The most interesting section is the map of 1800, where you can find the path of each book, the markers with the most important events/places/battles, filter them (not yet) and access the summary of each one with their own synopsis, main characters, and ships.
 
 # Development 
 
@@ -44,4 +44,4 @@ Next steps I would like to take:
 
 Special thanks to:
  - Algernhon [@algernhon] for his project [ROP-MAP](https://rop-map.com/), I was looking to find a way to create this project and he gave me the base with his code. 
- - Tom Horn for his data and for allowing me to use it. All the data for the markers will be taken from [The Patrick O'Brian Mapping Project](https://www.cannonade.net/index.php).
+ - Tom Horn for his data and for allowing me to use it. All the data markers and paths have been taken from [The Patrick O'Brian Mapping Project](https://www.cannonade.net/index.php).
