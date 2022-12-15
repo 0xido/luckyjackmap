@@ -43,5 +43,5 @@ Next steps I would like to take:
 # Credits
 
 Special thanks to:
- - Algernhon [@algernhon] for his project [ROP-MAP](https://rop-map.com/), I was looking to find a way to create this project and he brought me the base with his code. 
+ - Algernhon [@algernhon] for his project [ROP-MAP](https://rop-map.com/), I was looking to find a way to create this project and he gave me the base with his code. 
  - Tom Horn for his data and for allowing me to use it. All the data for the markers will be taken from [The Patrick O'Brian Mapping Project](https://www.cannonade.net/index.php).
