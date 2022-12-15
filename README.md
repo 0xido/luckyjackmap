@@ -12,15 +12,15 @@ I´ve used the base of the project [ROP-MAP](https://rop-map.com/) created by @A
 
 This project also uses [LeafLet library](https://leafletjs.com) for the interactive map like Algernhon project.
 
-## Structure
 
-The structure is straightforward, but it may be subject to change during development.
+## Structure
 
 - ./books/ - Main page of books and page of each book.
 - ./css/ - All CSS files of the project (each scss file to be worked on separately)
 - ./data/ - All markers/paths data in JSON format *(copied of Algerhon project)*
 - ./img/ - All images of: books covers *(not used at the moment, are linked now)*, icons, markers, paths (for each book summary), popups images, resources
 - ./js/ - JS part of the project *(copied of Algerhon project)*, but with some separation between the parts.
+
 
 ## Roadmap
 
