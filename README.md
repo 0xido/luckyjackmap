@@ -37,7 +37,7 @@ Next steps I would like to take:
 - [ ] Make the responsive.
 - [ ] Evaluate the move to a platform.
 
- I´m open to any help you can give me (specially in code, I´m a bit noobie 😅). You can contact me [@AMLomba].
+ I´m open to any help you can give me (specially in code, I´m a bit noobie 😅). You can contact me on Twitter [@AMLomba](https://twitter.com/AMLomba) or here.
  
 
 # Credits
@@ -45,4 +45,3 @@ Next steps I would like to take:
 Special thanks to:
  - Algernhon [@algernhon] for his project [ROP-MAP](https://rop-map.com/), I was looking to find a way to create this project and he gave me the base with his code. 
  - Tom Horn for his data and for allowing me to use it. All the data for the markers will be taken from [The Patrick O'Brian Mapping Project](https://www.cannonade.net/index.php).
-
