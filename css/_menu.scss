@@ -87,16 +87,86 @@
         /*margin-top: 30px;
         30px top margin to avoid conflict with the close button on smaller screens 
         */
-        a {
-          display: block;
-          padding: 2rem;
-          font-family: 'PlayfairDisplay-Bold_italic';
-          font-size: 2rem;
-          color: $color-brown;
-          text-decoration: none;
-          transition: 1s;
-          &:hover {
-            color: $color-white;
+        nav {
+          counter-reset: a;
+          a {
+            display: block;
+            width: 25%;
+            margin: 0 auto;
+            padding: 2rem 0;
+            font-size: 2.6rem;
+            font-family: 'PlayfairDisplay-Bold';
+            color: $color-brown;
+            text-decoration: none;
+            transition: all 1s;
+            &::before{
+              display: block;
+              width: 25%;
+              margin: 0 auto;
+              counter-increment: a;
+              content: "0" counter(a);
+              font-size: 1rem;
+              text-align: center;
+            }
+            span {
+              position: relative;
+              padding: 0 2rem;
+              &::before, &::after {
+                content: "";
+                position: absolute;
+                display: block;
+                top: 54%;
+                width: 30px;
+                height: 0;
+                border-top: 1px solid currentColor;
+                transition-property: opacity,transform;
+              }
+              &::before {
+                right: 100%;
+                transform: translateX(10px);
+                transition: all 1s;
+                opacity: 0;
+              }
+              &::after {
+                left: 100%;
+                transform: translateX(-10px);
+                transition: all 1s;
+                opacity: 0;
+              }
+            }
+            &:hover {
+              color: $color-dark;
+              transition: all 1s;
+              span {
+                &::before {
+                  transform: translateX(0);
+                  opacity: 1;
+                }
+                &::after {
+                  transform: translateX(0);
+                  opacity: 1;
+                }
+              }
+            }
+            &.active {
+              font-family: 'PlayfairDisplay-Black';
+              color: $color-dark;
+              &::before {
+                font-family: 'PlayfairDisplay-Black';
+              }
+              span {
+                &::before, &::after {
+                  content: "";
+                  position: absolute;
+                  display: block;
+                  top: 54%;
+                  width: 30px;
+                  height: 0;
+                  border-top: 2px solid currentColor;
+                  opacity: 1;
+                }
+              }
+            }
           }
         }
       }
