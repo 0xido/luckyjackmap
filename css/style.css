@@ -488,17 +488,83 @@ a {
   30px top margin to avoid conflict with the close button on smaller screens 
   */
 }
-.overlay .overlay-background .overlay-content a {
+.overlay .overlay-background .overlay-content nav {
+  counter-reset: a;
+}
+.overlay .overlay-background .overlay-content nav a {
   display: block;
-  padding: 2rem;
-  font-family: "PlayfairDisplay-Bold_italic";
-  font-size: 2rem;
+  width: 25%;
+  margin: 0 auto;
+  padding: 2rem 0;
+  font-size: 2.6rem;
+  font-family: "PlayfairDisplay-Bold";
   color: rgb(68, 60, 42);
   text-decoration: none;
-  transition: 1s;
+  transition: all 1s;
 }
-.overlay .overlay-background .overlay-content a:hover {
-  color: #eceff4;
+.overlay .overlay-background .overlay-content nav a::before {
+  display: block;
+  width: 25%;
+  margin: 0 auto;
+  counter-increment: a;
+  content: "0" counter(a);
+  font-size: 1rem;
+  text-align: center;
+}
+.overlay .overlay-background .overlay-content nav a span {
+  position: relative;
+  padding: 0 2rem;
+}
+.overlay .overlay-background .overlay-content nav a span::before, .overlay .overlay-background .overlay-content nav a span::after {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 54%;
+  width: 30px;
+  height: 0;
+  border-top: 1px solid currentColor;
+  transition-property: opacity, transform;
+}
+.overlay .overlay-background .overlay-content nav a span::before {
+  right: 100%;
+  transform: translateX(10px);
+  transition: all 1s;
+  opacity: 0;
+}
+.overlay .overlay-background .overlay-content nav a span::after {
+  left: 100%;
+  transform: translateX(-10px);
+  transition: all 1s;
+  opacity: 0;
+}
+.overlay .overlay-background .overlay-content nav a:hover {
+  color: #222;
+  transition: all 1s;
+}
+.overlay .overlay-background .overlay-content nav a:hover span::before {
+  transform: translateX(0);
+  opacity: 1;
+}
+.overlay .overlay-background .overlay-content nav a:hover span::after {
+  transform: translateX(0);
+  opacity: 1;
+}
+.overlay .overlay-background .overlay-content nav a.active {
+  font-family: "PlayfairDisplay-Black";
+  color: #222;
+}
+.overlay .overlay-background .overlay-content nav a.active::before {
+  font-family: "PlayfairDisplay-Black";
+}
+.overlay .overlay-background .overlay-content nav a.active span::before, .overlay .overlay-background .overlay-content nav a.active span::after {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 54%;
+  width: 30px;
+  height: 0;
+  border-top: 2px solid currentColor;
+  opacity: 1;
 }
 
 .on .overlay {
