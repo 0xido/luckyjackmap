@@ -9,10 +9,10 @@
 }
 /* RESPONSIVE POR HACER 
 @media (min-width: 768px) {
-	.corner-ribbon {
-		width: 3.5em;
-	  	margin: -4px;
-	}
+    .corner-ribbon {
+        width: 3.5em;
+          margin: -4px;
+    }
     .straight-ribbon {
         width: 27em;
         &.top {
@@ -28,12 +28,12 @@
 
 @media (min-width: 992px) {
     .border-outer {
-		height: 94%;
-	}
-	.corner-ribbon {
-		width: 4em;
-	  	margin: -5px;
-	}
+        height: 94%;
+    }
+    .corner-ribbon {
+        width: 4em;
+          margin: -5px;
+    }
     .straight-ribbon {
         width: 27em;
         &.top {
@@ -69,7 +69,7 @@
 }
 /* TAMAÑO MAC 13" */
 @media (min-width: 1200px) and (max-width: 1440px) {
-	
+    
     /* INTRO */
     .bg-map {
         .bg-overlay {
@@ -98,10 +98,15 @@
             }
         }
     }   
-    
+    /* MAP */
+
     /* SIDEBAR */
+    .filter-content {
+        .filters {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
     .sidebar__header {
-        padding-top: 2rem;
         .sidebar__header-title {
             font-size: 2.4rem;
         }
@@ -114,12 +119,28 @@
     }
     .sidebar__paths {
         .pathsgrid {
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(3, 1fr);
+            .pathsgrid__card {
+                min-height: 360px;
+                .name-date {
+                    min-height: 4rem;
+                }
+            }
 
         }
     }
-    /* OVERLAY */
+
+    /* MENU */
     .overlay-content {
         top: 8%!important;
     }
+
+    /* LOGO 
+    .site-header {
+        .logo {
+            h1 {
+                padding-top: 2.8rem;
+            }
+        }
+    }*/
 }

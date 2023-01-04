@@ -2,9 +2,6 @@
 
 
 
-    input[type="checkbox"][id^="checkbox"] {
-        display: none;
-    }
     
     /* Main */
     #map {
@@ -12,11 +9,36 @@
         height: 100vh;
     }
     
-
- 
+    /* Hover sobre cada path y resaltado */
+    .polyline:hover {
+        pointer-events: none; 
+        stroke-width: 2.5;
+      }
     
     
     /* Leaflet override */
+    .leaflet-tooltip {
+        padding: 8px 12px;
+        background-color: $color-dark;
+        font-size: .8rem;
+        color: $color-gold;
+        border: 1px solid $color-gold;
+        border-radius: 4px;
+        box-shadow: $color-box-shadow;
+    }
+    .leaflet-tooltip-top:before {
+        border-top-color: $color-gold;
+        }
+    .leaflet-tooltip-bottom:before {
+        border-bottom-color: $color-gold;
+        }
+    .leaflet-tooltip-left:before {
+        border-left-color: $color-gold;
+        }
+    .leaflet-tooltip-right:before {
+        border-right-color: $color-gold;
+        }
+    
     .leaflet-popup-pane {
         z-index: 2001;
     }
@@ -87,19 +109,19 @@
                 color: $color-dark;
             }
             .tooltip-tag--unconfirmed {
-                background-color: $color-red;
+                background-color: $color-gold;
             }
         }
         /*.tooltip-description {
             font-size: 1rem;
         }*/
         .tooltip-quote {
-
+            margin: 1rem 0;
             font-family: "PlayfairDisplay-Regular_italic", Arial, sans-serif;
         }
         .tooltip-seenin {
             margin-top: 1rem;
-            padding-top: 1rem;
+            padding: 1rem 0;
             border-top: 1px solid $color-gold;
         }
         .tooltip-moreinfo {

@@ -61,8 +61,12 @@ a {
     height: 48px;
     padding: 4px;
     background-color: $color-dark;
-    border: 1px solid $color-gold!important;
+    border: 1px solid $color-gold;
     cursor: pointer;
+    transition: all .8s;
+    &:hover {
+        background-color: $color-white;
+    }
     .border-inner {
         position: relative;
         display: block;
@@ -70,6 +74,7 @@ a {
         height: 100%;
         padding: 0;
         border: 1px solid $color-gold;
+        
     }
 } 
 

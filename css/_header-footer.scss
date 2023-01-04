@@ -17,15 +17,12 @@
         text-align: center;
         background: url(../img/resources/ribbons/Logo-ribbon.svg) center no-repeat;
         background-size: 268px;
-        transition: all 1s;
         h1 {
-            padding: 2.6rem 0;
+            padding-top: 3.2rem;
+            font-size: 1.6rem;
             a {
                 font-family: "PlayfairDisplay-Black_italic", Arial, sans-serif;
                 color: $color-dark;
-                font-weight: bold;
-                font-size: 1.6rem;
-                transition: all 1s;
             }
         }
     }

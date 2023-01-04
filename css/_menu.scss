@@ -1,6 +1,6 @@
 //_site-header.scss
 
-.border {
+.menu {
   &.menu-overlay {
     position: absolute;
     top: 2.4rem;
@@ -91,7 +91,7 @@
           counter-reset: a;
           a {
             display: block;
-            width: 25%;
+            width: 50%;
             margin: 0 auto;
             padding: 2rem 0;
             font-size: 2.6rem;
@@ -150,6 +150,7 @@
             }
             &.active {
               font-family: 'PlayfairDisplay-Black';
+              font-size: 3rem;
               color: $color-dark;
               &::before {
                 font-family: 'PlayfairDisplay-Black';
@@ -177,7 +178,7 @@
     .overlay {
       height: 100%;
     }
-    .border {
+    .menu {
         position: absolute;
         right: 2rem;
         width: 40px;
