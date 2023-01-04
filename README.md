@@ -24,15 +24,15 @@ This project also uses [LeafLet library](https://leafletjs.com) for the interact
 
 ## Roadmap
 
-The **0.0 version** - is not available on production, I´ve to create more content and do more research for each book and path. Now you can play with:
+The **0.1 version** - is not available on production, I´ve to create more content and do more research for each book and path. Now you can play with:
  - [X] Show the path and part of the events in the books (HMS Surprise, The Mauritius Command, Desolation Island, The Fortune of War and Surgeon´s Mate).
  - [X] Open and close the filter section.
  - [X] Access the structure of the books page and the first book page (Master & Commander).
+ - [X] Find a way to create multitude of paths for each book with a different color. This is because different paths appear in each book.
  - [ ] Responsive is not available, so small resolutions are not available either.
 
 
 Next steps I would like to take:
-- [ ] Find a way to create multitude of paths for each book with a different color. This is because different paths appear in each book.
 - [ ] Create a filter system which works correctly (it doesn´t work right now).
 - [ ] Make the responsive.
 - [ ] Evaluate the move to a platform.
@@ -45,3 +45,4 @@ Next steps I would like to take:
 Special thanks to:
  - Algernhon [@algernhon] for his project [ROP-MAP](https://rop-map.com/), I was looking to find a way to create this project and he gave me the base with his code. 
  - Tom Horn for his data and for allowing me to use it. All the data markers and paths have been taken from [The Patrick O'Brian Mapping Project](https://www.cannonade.net/index.php).
+
