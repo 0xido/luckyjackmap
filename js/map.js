@@ -4,15 +4,15 @@ const LIST_MARKERS = [];
 const CURRENT_CHAR = [];
 
 const PATH_SPEED_ANIMATION = 200;
-const PATH_WEIGHT = 2;
+const PATH_WEIGHT = 1.5;
 
 // Leaflet map setup
 let map = L.map('map', {
     crs: L.CRS.Simple,
     attributionControl: false,
-    zoom: 0,
-    minZoom: 1,
-    maxZoom: 4,
+    zoom: 1,
+    minZoom: 0,
+    maxZoom: 3,
     zoomControl: false,
 });
 
@@ -103,7 +103,7 @@ function setMarker() {
 
             LIST_MARKERS.push(L.marker(marker.coordinates, 
                 {icon: L.icon(
-                    {
+                     {
                         iconUrl: '/img/markers/'+ type.icon, 
                         iconSize: type.iconSize, 
                         iconAnchor: type.iconAnchor, 
@@ -113,7 +113,7 @@ function setMarker() {
                     maxWidth: '500', 
                     title: marker.title
                 })
-                .bindPopup("<div class='tooltip-image-wrapper' style='background: url(\"/img/popups/min/" + marker.image + "\")'></div><div class='tooltip-content'><header class='tooltip-header'><h2>" + marker.title + "</h2><div class='tooltip-tag'>" + marker.type + "</div>" + confirmed + "</header><div><div class='tooltip-description'>" + marker.description + "</div></br><div class='tooltip-quote'>" + marker.quote + "</div><div class='tooltip-seenin'><strong>Appears in the book:</strong><br> "+ marker.books + "</div>"+ readMore + ""+ dataProvided + "</div></div>")
+                .bindPopup("<div class='tooltip-image-wrapper' style='background: url(\"/img/popups/min/" + marker.image + "\")'></div><div class='tooltip-content'><header class='tooltip-header'><h2>" + marker.title + "</h2><div class='tooltip-tag'>" + marker.type + "</div>" + confirmed + "</header><div><div class='tooltip-description'>" + marker.description + "</div><div class='tooltip-quote'>" + marker.quote + "</div><div class='tooltip-seenin'><strong>Appears in the book:</strong><br> "+ marker.books + "</div>"+ readMore + ""+ dataProvided + "</div></div>")
                 .addTo(map));
     });
 }
@@ -157,7 +157,6 @@ function setPath(element) {
 
 /*
  * Function that refresh all polylines drawn on the map
- *
 */
 function refreshTimelinePaths() {
     Object.keys(LIST_PATHS).forEach(bookName => {
@@ -177,31 +176,33 @@ function refreshTimelinePaths() {
 
 /*
  * Function that returns every polyline of a book
- *
- * @param bookName string Name of the book
- * @return array of L.Polyline
 */
 function getPolylinesFromName(bookName) {
     let bookPaths, layerArray = [];
 
     bookPaths = DATA_PATHS.paths.filter(path => 
         (path.book === bookName));
-    bookColor = DATA_PATHS.books.find(color => color.name === bookName).color;
 
     bookPaths.forEach(bookPath => {
         let polyLine = L.polyline(bookPath.coordinates, 
             {
-                color: bookColor, 
+                color: bookPath.color,
                 weight: PATH_WEIGHT,
                 dashArray: bookPath.isConfirmed ? '0' : '10 10 1 10',
-                opacity: bookPath.isConfirmed ? '1' : '.7'
-            });
+                opacity: bookPath.isConfirmed ? '1' : '.7',
+                className: 'polyline',
+            }).bindTooltip(bookPath.pathName);
         layerArray.push(polyLine);
     });
 
     return layerArray;
 }
-
+// Ocultar elementos vacíos de los popups
+const emptyElements = document.querySelectorAll(".empty");
+emptyElements.forEach(element => {
+  element.style.display = "none";
+});
+  
 
 // Dev, show paths on console when drawing on the map
 // Hace falta pulsar en finalizar la linea para verlo en console
