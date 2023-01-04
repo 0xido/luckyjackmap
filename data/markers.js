@@ -117,8 +117,7 @@ const DATA_MARKERS = {
         },
         // SHIPYARD
     ],
-    // A partir de aquí se muestran los markers con sus popups (con título, imagen, descripción, etc...)
-    "markers": [
+   "markers": [
         // BOOK STARTING POINT
         /*{
             "title": "Portsmouth",
@@ -216,7 +215,7 @@ const DATA_MARKERS = {
                 "Master & Commander",
             ],
             "description": "Spain entered a period of reform and renewal, as well as continued decline. Ideas of the Age of Enlightenment entered Spain and Spanish America during the eighteenth century. The invasion of the Iberian Peninsula by Napoleon Bonaparte in 1807–1808 upended political arrangements of the Spanish Empire and the Portuguese Empire.",
-            "quote": ' "Not yet" ',
+            "quote": '',
             "readMoreUrl": "https://en.wikipedia.org/wiki/History_of_Madrid#Capital_of_the_Empire",
             "isConfirmed": true
         },
@@ -671,9 +670,9 @@ const DATA_MARKERS = {
                 "Desolation Island",
                 "The Fortune of War",
             ],
-            "description": "The sinking",
+            "description": "",
             "quote": '',
-            "readMoreUrl": "  ",
+            "readMoreUrl": "",
             "dataProvidedUrl": "https://www.cannonade.net/index.php",
             "isConfirmed": true
         },
